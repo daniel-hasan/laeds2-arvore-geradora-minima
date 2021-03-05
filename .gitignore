@@ -2,3 +2,5 @@
 *.pyc
 embeddings.txt
 *.npz
+*.idx
+.ipynb_checkpoints

@@ -99,8 +99,4 @@ class MinHeap:
 
         return minimo
 
-    def __str__(self):
-        return str(self.arr_heap)
 
-    def __repr__(self):
-        return str(self)

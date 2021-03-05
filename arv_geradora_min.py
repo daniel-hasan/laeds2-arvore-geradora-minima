@@ -76,56 +76,9 @@ class Grafo:
 		peso[vertice_inicial].peso = 0
 		fila_min_heap.insere(peso[vertice_inicial])
 
-
-		while len(fila_min_heap.arr_heap)>1:
+        #modifique o While apropriadamente
+		while False:
 			pass 
 
 		return pai
-class GrafoMatrizAdjacencia(Grafo):
-	def __init__(self):
-		super().__init__()
-		self.vertice_to_idx = {}
-		self.idx_to_vertice = {}
-		self.matriz_adjacencia = []
-
-	def adiciona_aresta(self, valor_origem, valor_destino, peso:int=1) :
-		
-		vertice_origem,vertice_destino = super().__init__(valor_origem,valor_destino, peso)
-		
-		vertice_origem = self.obtem_vertice(valor_origem)
-		vertice_destino = self.obtem_vertice(valor_destino)
-
-		idx_origem = self.vertice_to_idx[vertice_origem]
-		idx_destino = self.vertice_to_idx[vertice_destino]
-		
-		self.matriz_adjacencia[idx_origem,idx_destino] = peso
-
-	def adiciona_vertice(self, valor_vertice) -> Vertice:
-		#importante pois podem haver vertices que não tem arestas
-		novo_vertice = super().adiciona_vertice(valor_vertice)
-
-		#posicao referente a este vertice na matriz de adjacencia
-		pos_novo_vertice = len(self.matriz_adjacencia)
-		self.vertice_to_idx[novo_vertice] = pos_novo_vertice
-		self.idx_to_vertice[pos_novo_vertice] = novo_vertice
-
-		#inicializa na matriz d adjacencia
-		for i in range(len(self.matriz_adjacencia)):
-			self.matriz_adjacencia[i].append(0)
-		
-		self.matriz_adjacencia.append([])
-		for j in range(len(self.matriz_adjaccencia)):
-			self.matriz_adjacencia[pos_novo_vertice,j] = 0
-		
-		return novo_vertice
-
-
-	def cria_arv_geradora_minima(self, valor_vertice_inicial) -> Dict[Vertice,Vertice]:
-		pai = {}
-		vertice_inicial = self.obtem_vertice(valor_vertice_inicial)
-		if not vertice_inicial:
-			return None
-
-		idx_vertice_inicial = self.vertice_to_idx[vertice_inicial]
-		vertices_arvore = set()
 
